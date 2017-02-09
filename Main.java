@@ -16,15 +16,15 @@ public class Main {
     public static void main(String[] args) {
         
         
-        Pila pila=new Pila();// creamos pila de tipo Pila
-        Lista lista =  new Lista();// creamos lista de tipo lista 
+        Pila<Integer> pila=new Pila<Integer>();// creamos pila de tipo Pila,haciendo uso de generic de tipo entero
+        Lista<String> lista =  new Lista<String>();// creamos lista de tipo lista , haciendo uso de generic de tipo String 
         
         //+++++++++++++++++++++++Leemos el texto.text y lo guardamos en variable string+++++++++++++++++++++++++++++++///
         LeerTxt leer;
         leer = new LeerTxt();
 	//Se agrega la direccion como parametro
 	String expPostFix;
-	expPostFix = leer.leerTxt("C:\\Users\\josgi\\Downloads\\HojaTrabajo_2\\Programa_NetBens\\src\\datos.txt");
+	expPostFix = leer.leerTxt("C:\\Users\\User\\Desktop\\Estrucura de Datos\\Hoja de trabajo\\HojaTrabajo_2\\Programa_NetBens\\src\\datos.txt");
 	System.out.println("La expresión postFix ingresada es:" + expPostFix);
 
         
@@ -37,14 +37,7 @@ public class Main {
         
        String cadenaPila="";       //varable que obtiene los valores de pila, despues que cuentre unoperador aritmetico 
        int cuenta=0;
-       
-       
-       
-       
-       
-       
-       
-       
+    
         char charPostFix;      
         int i=0;
         //Evaluamos todos los carateres de la expresion postfix
@@ -200,3 +193,11 @@ public class Main {
         
       
         
+       
+        
+        
+        
+       
+    
+    
+

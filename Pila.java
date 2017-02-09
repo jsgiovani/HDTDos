@@ -1,13 +1,8 @@
-/*
- * NetBeans IDE 8.2
- * 
 
-/**
- *
- * @author Juan Carlos Solís Cruz-15564
- *        
- */
-public class Pila {
+//La clase pila es generica
+//Implementa la interfaz <InterfazPila>
+
+public class Pila<T>  implements InterfazPila<T>{
     private NodoPila cima; //encapsulamos puntero de NodoPila
     int tamanoPila;
     //constructor
@@ -21,15 +16,17 @@ public class Pila {
         return cima==null;
     }
     //Método push: para insertar/empujar un elemento en la Pila
-    public void empujar(int elemento){
+    @Override
+    public void empujar(T elemento){
         NodoPila nuevo=new NodoPila(elemento);//creamos puntero de tipo NodoPila
         nuevo.siguiente=cima;
         cima=nuevo;
         tamanoPila++;       
     }
     // Metodo pop: Para sacar un elemento de la pila
-    public  int sacar(){
-        int aux=cima.dato;
+    @Override
+    public  T sacar(){
+        T aux=(T) cima.dato;
         cima=cima.siguiente;
         tamanoPila--;
         return aux;
@@ -37,17 +34,22 @@ public class Pila {
         
     }
     //Método cima para saber quien esta en la cima de la Pila
-    public int cima(){
-        return cima.dato;
+    @Override
+    public T cima(){
+        return (T) cima.dato;
     }
     //Método tamanoPila para saber el tamano de la pila
+    @Override
     public int tamanoPila(){
         return tamanoPila;
     }
     //metodo limpiar pila:para limpiar(vaciar) la pila
+    @Override
     public void limpiarPila(){
         while(!estaVacia()){ //Mienstras la pila no este vacia 
             sacar();
         }
-    }  
+    }
+    
+    
 }

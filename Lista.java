@@ -8,7 +8,7 @@
  *
  * @author User
  */
-public class Lista {
+public class Lista<T> {
     
     //todas las listas deben tener referencias hacia el inico y al fina de la lista
     //cola y inicio 
@@ -32,7 +32,7 @@ public class Lista {
         }
     }
     //Método para agrear un nodo al inicio de la lista
-    public void agregarAlInicio(String elemento){
+    public void agregarAlInicio(T elemento){
         //creando al nodo
         inicio=new Nodo(elemento, inicio);
         if(fin==null){ //si fin es igual a null significa que aún no habian nodos
@@ -40,7 +40,7 @@ public class Lista {
         }
     }
     //Método para insertar nodo al Final de la 
-    public void agregarAlFinal(String elemento){
+    public void agregarAlFinal(T elemento){
         if (!estaVacia()){//si no esta vacia ,algo tiene
             fin.siguiente=new Nodo(elemento);
             fin=fin.siguiente;
